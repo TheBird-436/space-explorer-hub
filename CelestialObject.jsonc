@@ -1,0 +1,91 @@
+{
+  "name": "CelestialObject",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "planet",
+        "dwarf_planet",
+        "moon",
+        "star",
+        "galaxy",
+        "deep_space",
+        "mission"
+      ]
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "facts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "diameter": {
+      "type": "string"
+    },
+    "distance": {
+      "type": "string"
+    },
+    "day_length": {
+      "type": "string"
+    },
+    "year_length": {
+      "type": "string"
+    },
+    "moons": {
+      "type": "string"
+    },
+    "color": {
+      "type": "string"
+    },
+    "rarity": {
+      "type": "string",
+      "enum": [
+        "common",
+        "rare",
+        "epic",
+        "legendary"
+      ]
+    },
+    "xp_reward": {
+      "type": "number"
+    },
+    "sort_order": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "name",
+    "type",
+    "summary",
+    "color",
+    "rarity"
+  ],
+  "rls": {
+    "read": {},
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
